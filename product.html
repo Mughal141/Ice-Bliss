@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ice Bliss - Premium Frozen Foods & Beverages</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/">
+                        <img src="/images/logo1.png" alt="Ice Bliss Logo" />
+                    </a>
+                </div>
+                <nav>
+                    <ul class="desktop-nav">
+                        <li><a href="/" class="active">Home</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/product.html">Product</a></li>
+                    </ul>
+                    <div class="mobile-menu-button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/product.html">Product</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="product-container">
+        <h1 class="section-title">Our Ice Packed Products</h1>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/Ice Cups.png" alt="Ice Packed Cups">
+            </div>
+            <div class="product-details">
+                <h2>Ice Packed Cups</h2>
+                <p class="product-description">High-quality disposable cups perfect for cold beverages. Ideal for
+                    parties and events.</p>
+
+                <div class="pricing-info">
+                    <p class="regular-price">Regular Price: PKR 20 per cup</p>
+                    <p class="bulk-price">Bulk Price (100+ cups): PKR 17 per cup</p>
+                </div>
+
+                <div class="quantity-selector">
+                    <label for="cups-quantity">Quantity:</label>
+                    <input type="number" id="cups-quantity" min="1" value="1" onchange="updateCupsPrice()">
+                </div>
+
+                <div class="price-display">
+                    <p>Total Price: <span id="cups-total-price">PKR 20</span></p>
+                </div>
+
+                <button class="btn add-to-cart" onclick="addCupsToCart()">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Ice Packed Pouches -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/Ice Pouches.png" alt="Ice Packed Pouches">
+            </div>
+            <div class="product-details">
+                <h2>Ice Packed Pouches</h2>
+                <p class="product-description">Convenient ice pouches in multiple sizes for all your cooling needs.</p>
+
+                <div class="size-options">
+                    <label>Select Size:</label>
+                    <div class="size-buttons">
+                        <button class="size-btn active" data-size="1kg" data-price="50" onclick="selectSize(this)">1kg
+                            (PKR 50)</button>
+                        <button class="size-btn" data-size="2kg" data-price="100" onclick="selectSize(this)">2kg (PKR
+                            100)</button>
+                        <button class="size-btn" data-size="5kg" data-price="200" onclick="selectSize(this)">5kg (PKR
+                            200)</button>
+                    </div>
+                </div>
+
+                <div class="pricing-info">
+                    <p class="bulk-price">Bulk Discount (100kg+): 15% off on all sizes</p>
+                </div>
+
+                <div class="quantity-selector">
+                    <label for="pouches-quantity">Quantity:</label>
+                    <input type="number" id="pouches-quantity" min="1" value="1" onchange="updatePouchesPrice()">
+                </div>
+
+                <div class="price-display">
+                    <p>Total Weight: <span id="total-weight">1kg</span></p>
+                    <p>Total Price: <span id="pouches-total-price">PKR 50</span></p>
+                </div>
+
+                <button class="btn add-to-cart" onclick="addPouchesToCart()">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Cart Section -->
+        <div class="cart-section">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <p>Total: <span id="cart-total-price">PKR 0</span></p>
+                <button class="btn checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
